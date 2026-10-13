@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wan Amirul Syahir — Portfolio Digital</title>
+<meta name="description" content="Portfolio digital Wan Amirul Syahir Bin Wan Mazlan, Guru Pendidikan Islam.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --biru:#031273; --biru-gelap:#020a45; --biru-muda:#e8ecf9;
+  --kertas:#f6f8fd; --teks:#13193a; --senyap:#5a6280; --emas:#c9a24b; --garis:#d5dbee;
+  --serif:'Fraunces',Georgia,'Times New Roman',serif;
+  --sans:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{font-family:var(--sans);background:var(--kertas);color:var(--teks);line-height:1.65;font-size:16px}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--emas);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Nav */
+nav{position:sticky;top:0;z-index:10;background:var(--biru-gelap);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:14px 5vw}
+.logo{font-family:var(--serif);font-weight:700;font-size:1.15rem;text-decoration:none}
+#menu{display:flex;gap:22px;list-style:none;font-size:.9rem}
+#menu a{text-decoration:none;opacity:.85}
+#menu a:hover{opacity:1;color:var(--emas)}
+#menuBtn{display:none;background:none;border:1px solid #ffffff55;color:#fff;font-size:1.3rem;border-radius:8px;padding:2px 10px;cursor:pointer}
+@media (max-width:900px){
+  #menuBtn{display:block}
+  #menu{display:none;position:absolute;top:100%;left:0;right:0;background:var(--biru-gelap);flex-direction:column;gap:0;padding:8px 5vw 16px}
+  #menu.buka{display:flex}
+  #menu a{display:block;padding:10px 0;border-bottom:1px solid #ffffff1f}
+}
+
+/* Hero */
+.hero{background:var(--biru);color:#fff;padding:12vh 5vw 14vh;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;opacity:.09;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%23fff' stroke-width='1.2'%3E%3Crect x='20' y='20' width='40' height='40'/%3E%3Crect x='20' y='20' width='40' height='40' transform='rotate(45 40 40)'/%3E%3C/g%3E%3C/svg%3E")}
+.hero-in{position:relative;max-width:980px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
+.hero p.tag{color:var(--emas);font-weight:600;margin-bottom:18px}
+.hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(2.4rem,6.2vw,4.6rem);line-height:1.08;letter-spacing:-.01em}
+.hero .nama{margin-top:22px;font-size:1.05rem;max-width:46ch;opacity:.92}
+.cip{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.cip span{border:1px solid #ffffff44;border-radius:99px;padding:6px 14px;font-size:.88rem}
+.foto{width:190px;height:190px;border-radius:50%;border:3px solid var(--emas);background:var(--biru-gelap);display:grid;place-items:center;font-size:4.2rem;overflow:hidden}
+.foto img{width:100%;height:100%;object-fit:cover}
+@media (max-width:760px){.hero-in{grid-template-columns:1fr}.foto{order:-1;width:130px;height:130px;font-size:3rem}}
+
+/* Seksyen */
+section{padding:84px 5vw}
+section:nth-of-type(even){background:var(--biru-muda)}
+.dalam{max-width:980px;margin:0 auto}
+h2{font-family:var(--serif);font-size:clamp(1.7rem,3.6vw,2.4rem);color:var(--biru);line-height:1.2;margin-bottom:8px}
+.sub{color:var(--senyap);margin-bottom:36px}
+h3{font-size:1.02rem;font-weight:600}
+small,.meta{color:var(--senyap);font-size:.88rem}
+.kosong{color:var(--senyap);font-style:italic}
+
+/* Kerjaya: garis masa */
+.masa{border-left:2px solid var(--biru);padding-left:26px;display:grid;gap:26px}
+.masa .item{position:relative}
+.masa .item::before{content:"";position:absolute;left:-34px;top:7px;width:14px;height:14px;border-radius:50%;background:var(--emas);border:3px solid var(--kertas)}
+section:nth-of-type(even) .masa .item::before{border-color:var(--biru-muda)}
+
+/* Perkhidmatan */
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.servis{background:#fff;border:1px solid var(--garis);border-top:4px solid var(--biru);border-radius:6px;padding:22px}
+.servis p{color:var(--senyap);margin-top:6px;font-size:.95rem}
+
+/* Baris (kursus, bengkel) */
+.baris{display:grid;gap:0;border-top:1px solid var(--garis)}
+.baris div{padding:14px 0;border-bottom:1px solid var(--garis)}
+.dua{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:48px}
+.dua h3.lajur{font-family:var(--serif);font-size:1.2rem;color:var(--biru);margin-bottom:14px}
+
+/* Badge */
+.badge-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:20px}
+.badge{text-align:center}
+.lencana{width:92px;height:92px;margin:0 auto 10px;border-radius:50%;background:var(--biru);color:var(--emas);display:grid;place-items:center;font-size:2.2rem;border:3px solid var(--emas);overflow:hidden}
+.lencana img{width:100%;height:100%;object-fit:cover}
+.badge h3{font-size:.92rem}
+
+/* Anugerah & sumbangan */
+.anugerah{display:grid;gap:14px}
+.anugerah div{border-left:4px solid var(--emas);background:#fff;padding:14px 18px;border-radius:0 6px 6px 0}
+.sumbangan{display:grid;gap:22px}
+.sumbangan p{color:var(--senyap);max-width:70ch}
+
+/* Hubungi */
+#hubungi{background:var(--biru-gelap)!important;color:#fff;text-align:center}
+#hubungi h2{color:#fff}
+#hubungi .sub{color:#ffffffb3}
+.pautan{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.pautan a{background:var(--emas);color:var(--biru-gelap);font-weight:600;padding:12px 22px;border-radius:8px;text-decoration:none}
+.pautan a:hover{background:#fff}
+footer{background:var(--biru-gelap);color:#ffffff99;text-align:center;padding:22px 5vw 30px;font-size:.85rem;border-top:1px solid #ffffff1f}
+.lampiran{display:block;max-width:100%;max-height:220px;border-radius:6px;border:1px solid var(--garis);margin-top:10px}
+a.fail{display:inline-block;margin-top:8px;font-size:.88rem;font-weight:600;color:var(--biru)}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="#">Amirul Syahir</a>
+  <button id="menuBtn" aria-label="Buka menu" aria-expanded="false">☰</button>
+  <ul id="menu">
+    <li><a href="#kerjaya">Kerjaya</a></li>
+    <li><a href="#perkhidmatan">Perkhidmatan</a></li>
+    <li><a href="#kursus">Kursus &amp; Sijil</a></li>
+    <li><a href="#badge">Badge</a></li>
+    <li><a href="#bengkel">Bengkel</a></li>
+    <li><a href="#anugerah">Anugerah</a></li>
+    <li><a href="#sumbangan">Sumbangan Lain</a></li>
+    <li><a href="#hubungi">Hubungi</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <p class="tag" id="hTag"></p>
+      <h1 id="hTajuk"></h1>
+      <p class="nama" id="hNama"></p>
+      <div class="cip" id="hCip"></div>
+    </div>
+    <div class="foto" id="hFoto" aria-label="Gambar profil"></div>
+  </div>
+</header>
+
+<section id="kerjaya"><div class="dalam">
+  <h2>Sejarah Perkhidmatan</h2><p class="sub">Perjalanan saya sebagai pendidik.</p>
+  <div class="masa" id="kerjayaList"></div>
+</div></section>
+
+<section id="perkhidmatan"><div class="dalam">
+  <h2>Perkhidmatan</h2><p class="sub">Apa yang boleh saya bantu.</p>
+  <div class="grid2" id="perkhidmatanList"></div>
+</div></section>
+
+<section id="kursus"><div class="dalam">
+  <h2>Kursus Disertai &amp; Sijil</h2><p class="sub">Pembelajaran yang berterusan.</p>
+  <div class="dua">
+    <div><h3 class="lajur">Kursus disertai</h3><div class="baris" id="kursusList"></div></div>
+    <div><h3 class="lajur">Sijil &amp; kelayakan</h3><div class="baris" id="sijilList"></div></div>
+  </div>
+</div></section>
+
+<section id="badge"><div class="dalam">
+  <h2>Badge Diperolehi</h2><p class="sub">Kelayakan digital yang telah dicapai.</p>
+  <div class="badge-grid" id="badgeList"></div>
+</div></section>
+
+<section id="bengkel"><div class="dalam">
+  <h2>Kursus &amp; Bengkel Dikendalikan</h2><p class="sub">Program yang saya kendalikan sebagai fasilitator.</p>
+  <div class="baris" id="bengkelList"></div>
+</div></section>
+
+<section id="anugerah"><div class="dalam">
+  <h2>Anugerah &amp; Pengiktirafan</h2><p class="sub">Penghargaan yang diterima.</p>
+  <div class="anugerah" id="anugerahList"></div>
+</div></section>
+
+<section id="sumbangan"><div class="dalam">
+  <h2>Sumbangan Lain</h2><p class="sub">Peranan saya di luar bilik darjah.</p>
+  <div class="sumbangan" id="sumbanganList"></div>
+</div></section>
+
+<section id="hubungi"><div class="dalam">
+  <h2>Hubungi Saya</h2><p class="sub">Terbuka untuk kerjasama dan perkongsian ilmu.</p>
+  <div class="pautan" id="pautanList"></div>
+</div></section>
+
+<footer id="footer"></footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script>
+/* ============================================================
+   EDIT DI SINI SAHAJA. Semua kandungan portfolio ada dalam DATA.
+   Gantikan teks [dalam kurungan] dengan maklumat sebenar anda.
+   Untuk gambar: letak fail dalam folder "images" dan isi "gambar".
+   ============================================================ */
+const DATA = {
+  nama: "Wan Amirul Syahir Bin Wan Mazlan",
+  jawatan: "Guru Pendidikan Islam",
+  gred: "DG9",
+  sekolah: "SK Gran/Stumbin, Sri Aman Sarawak",
+  tag: "Guru Novis Pemacu Perubahan",
+  tajuk: "Memperkasa pendidikan, merentasi lautan.",
+  gambarProfil: "",            // cth: "images/profil.jpg"
+  emojiProfil: "👳🏻‍♂️",
+  kerjaya: [
+    { tahun: "[2026 – kini]", tajuk: "Guru Pendidikan Islam", tempat: "SK Gran/Stumbin, Sri Aman, Sarawak" },
+  ],
+  perkhidmatan: [
+    { tajuk: "Pengajaran Pendidikan Islam", teks: "Pengajaran dan pembelajaran yang menyentuh akhlak dan akal murid." },
+    { tajuk: "Bimbingan Al-Quran", teks: "Bimbingan tilawah dan hafazan untuk murid pelbagai peringkat." },
+    { tajuk: "Bahan Digital", teks: "Penghasilan bahan pengajaran digital yang mudah dan menarik." },
+    { tajuk: "Latihan & Perkongsian", teks: "Berkongsi pengalaman dengan rakan guru melalui bengkel dan latihan." }
+  ],
+  kursus: [
+    { tarikh: "[Bulan Tahun]", tajuk: "[Nama kursus]", penganjur: "[Penganjur]" }
+  ],
+  sijil: [
+    { tarikh: "[Tahun]", tajuk: "[Ijazah / Diploma / Sijil]", penganjur: "[Institusi]" }
+  ],
+  badge: [
+    { tajuk: "[Nama badge]", emoji: "🏅", gambar: "" }
+  ],
+  bengkel: [
+    { tarikh: "[Bulan Tahun]", tajuk: "[Nama bengkel]", penganjur: "[Peringkat / Lokasi]" }
+  ],
+  anugerah: [
+    { tahun: "[Tahun]", tajuk: "[Nama anugerah]", pemberi: "[Pemberi anugerah]" }
+  ],
+  sumbangan: [
+    { tajuk: "[Jawatan / aktiviti]", teks: "[Penerangan ringkas sumbangan anda.]" }
+  ],
+  pautan: [
+    { label: "Facebook", url: "https://facebook.com/" },
+    { label: "TikTok", url: "https://tiktok.com/" }
+  ]
+};
+
+/* ---------- Sambungan Supabase (isi selepas setup, lihat panduan) ---------- */
+const SUPABASE_URL = "";   // https://ixrwqticesnbtlfydarv.supabase.co
+const SUPABASE_KEY = "";   // eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml4cndxdGljZXNuYnRsZnlkYXJ2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTE4NDkwNDEsImV4cCI6MjEwNzQyNTA0MX0.TgEVXZ2x4zpk-TJSbwWkXNHT9FfG5tvB6rDvUnhXO9M
+
+/* ---------- Kod paparan (tidak perlu diubah) ---------- */
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const KOSONG = '<p class="kosong">Maklumat akan dikemas kini tidak lama lagi.</p>';
+const papar = (id, senarai, fn) => { $(id).innerHTML = senarai.length ? senarai.map(fn).join("") : KOSONG; };
+const n = i => ({tarikh:i.tarikh||i.tahun||"", tajuk:i.tajuk||"", butiran:i.butiran||i.tempat||i.penganjur||i.pemberi||i.teks||"", fail:i.fail_url||i.gambar||"", emoji:i.emoji});
+const lampiran = u => !u ? "" : /\.(jpe?g|png|webp|gif)(\?|$)/i.test(u)
+  ? `<a href="${esc(u)}" target="_blank" rel="noopener"><img class="lampiran" src="${esc(u)}" alt="" loading="lazy"></a>`
+  : `<a class="fail" href="${esc(u)}" target="_blank" rel="noopener">Lihat dokumen</a>`;
+const baris = i => `<div><small>${esc(i.tarikh)}</small><h3>${esc(i.tajuk)}</h3><p class="meta">${esc(i.butiran)}</p>${lampiran(i.fail)}</div>`;
+const REN = {
+  kerjaya: i => `<div class="item"><small>${esc(i.tarikh)}</small><h3>${esc(i.tajuk)}</h3><p class="meta">${esc(i.butiran)}</p>${lampiran(i.fail)}</div>`,
+  kursus: baris, sijil: baris, bengkel: baris,
+  badge: i => `<div class="badge"><div class="lencana">${i.fail ? `<img src="${esc(i.fail)}" alt="">` : esc(i.emoji || "🏅")}</div><h3>${esc(i.tajuk)}</h3></div>`,
+  anugerah: i => `<div><small>${esc(i.tarikh)}</small><h3>${esc(i.tajuk)}</h3><p class="meta">${esc(i.butiran)}</p>${lampiran(i.fail)}</div>`,
+  sumbangan: i => `<div><h3>${esc(i.tajuk)}</h3><p>${esc(i.butiran)}</p>${lampiran(i.fail)}</div>`
+};
+const LIST = {kerjaya:"kerjayaList", kursus:"kursusList", sijil:"sijilList", badge:"badgeList", bengkel:"bengkelList", anugerah:"anugerahList", sumbangan:"sumbanganList"};
+const lukis = sumber => Object.keys(LIST).forEach(k => papar(LIST[k], (sumber[k] || []).map(n), REN[k]));
+
+$("hTag").textContent = DATA.tag;
+$("hTajuk").textContent = DATA.tajuk;
+$("hNama").textContent = DATA.nama + " — " + DATA.jawatan + ", berkhidmat membina generasi yang celik akhlak dan celik teknologi.";
+$("hCip").innerHTML = [DATA.jawatan, DATA.gred, DATA.sekolah].filter(Boolean).map(t => `<span>${esc(t)}</span>`).join("");
+$("hFoto").innerHTML = DATA.gambarProfil ? `<img src="${esc(DATA.gambarProfil)}" alt="${esc(DATA.nama)}">` : esc(DATA.emojiProfil);
+papar("perkhidmatanList", DATA.perkhidmatan, i => `<div class="servis"><h3>${esc(i.tajuk)}</h3><p>${esc(i.teks)}</p></div>`);
+$("pautanList").innerHTML = (DATA.pautan || []).map(p => `<a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.label)}</a>`).join("");
+$("footer").textContent = "© " + new Date().getFullYear() + " " + DATA.nama + ". Semua hak terpelihara.";
+
+lukis(DATA);  /* paparan awal / sandaran */
+if (SUPABASE_URL && SUPABASE_KEY && window.supabase) {
+  window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY)
+    .from("entri").select("*").order("created_at", {ascending:false})
+    .then(({data, error}) => {
+      if (error || !data) return;
+      const s = {};
+      data.forEach(r => (s[r.kategori] = s[r.kategori] || []).push(r));
+      lukis(s);
+    });
+}
+
+const btn = $("menuBtn"), menu = $("menu");
+btn.addEventListener("click", () => {
+  const buka = menu.classList.toggle("buka");
+  btn.setAttribute("aria-expanded", buka);
+});
+menu.addEventListener("click", e => { if (e.target.tagName === "A") { menu.classList.remove("buka"); btn.setAttribute("aria-expanded", false); } });
+</script>
+</body>
+</html>
